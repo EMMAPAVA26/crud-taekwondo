@@ -4,6 +4,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { ParticipantForm } from '../components';
 import { useCreateParticipant } from '../hooks/useParticipantQuery';
 import type { CreateParticipantDTO } from '../types/taekwondo';
+import { COLORS } from '../constants';
 
 export const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export const RegisterPage: React.FC = () => {
   };
 
   return (
-    <Box sx={{ minHeight: 'calc(100vh - 80px)', background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)', py: 4 }}>
+    <Box sx={{ minHeight: 'calc(100vh - 80px)', background: COLORS.BG_GRADIENT, py: 4 }}>
       <Container maxWidth="lg">
         <Box sx={{ mb: 3 }}>
           <Button

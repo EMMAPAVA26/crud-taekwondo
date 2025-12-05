@@ -13,6 +13,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import type { Participant } from '../types/taekwondo';
+import { COLORS, SPACING } from '../constants';
 
 interface ParticipantTableProps {
   participants: Participant[];
@@ -28,10 +29,10 @@ export const ParticipantTable: React.FC<ParticipantTableProps> = ({
   onView,
 }) => {
   return (
-    <TableContainer component={Paper} sx={{ mt: 2, boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)', borderRadius: '16px' }}>
+    <TableContainer component={Paper} sx={{ mt: 2, boxShadow: SPACING.CARD_SHADOW, borderRadius: SPACING.CARD_BORDER_RADIUS }}>
       <Table>
         <TableHead>
-          <TableRow sx={{ backgroundColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white' }}>
+          <TableRow sx={{ background: COLORS.PRIMARY_GRADIENT, color: 'white' }}>
             <TableCell sx={{ color: 'white', fontWeight: 700 }}>Nombre</TableCell>
             <TableCell sx={{ color: 'white', fontWeight: 700 }}>Escuela</TableCell>
             <TableCell sx={{ color: 'white', fontWeight: 700 }}>Email</TableCell>

@@ -1,70 +1,115 @@
-import { useNavigate } from 'react-router-dom';
-import { Container, Box, Card, CardContent, Typography, Button } from '@mui/material';
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import GroupIcon from '@mui/icons-material/Group';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import { useNavigate } from "react-router-dom";
+import {
+  Container,
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Button,
+} from "@mui/material";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import GroupIcon from "@mui/icons-material/Group";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import { COLORS, SPACING, ANIMATION } from '../constants';
 
 export const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ minHeight: 'calc(100vh - 80px)', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', display: 'flex', alignItems: 'center', py: 8 }}>
+    <Box
+      sx={{
+        minHeight: 'calc(100vh - 80px)',
+        background: COLORS.PRIMARY_GRADIENT,
+        display: 'flex',
+        alignItems: 'center',
+        py: 8,
+      }}
+    >
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
-            <EmojiEventsIcon sx={{ fontSize: 80, color: 'white' }} />
+        <Box sx={{ textAlign: "center", mb: 8 }}>
+          <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
+            <EmojiEventsIcon sx={{ fontSize: 80, color: "white" }} />
           </Box>
-          <Typography variant="h2" sx={{ fontWeight: 900, mb: 2, color: 'white', letterSpacing: '-1px' }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontWeight: 900,
+              mb: 2,
+              color: "white",
+              letterSpacing: "-1px",
+            }}
+          >
             Torneo de Taekwondo
           </Typography>
-          <Typography variant="h6" sx={{ color: 'rgba(255,255,255,0.9)', fontWeight: 500, fontSize: '1.1rem' }}>
+          <Typography
+            variant="h6"
+            sx={{
+              color: "rgba(255,255,255,0.9)",
+              fontWeight: 500,
+              fontSize: "1.1rem",
+            }}
+          >
             Sistema de Inscripción y Gestión de Participantes
           </Typography>
         </Box>
 
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center', mb: 6 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 4,
+            justifyContent: "center",
+            mb: 6,
+          }}
+        >
           {/* Card Nueva Inscripción */}
           <Card
-            onClick={() => navigate('/register')}
+            onClick={() => navigate("/register")}
             sx={{
-              width: { xs: '100%', sm: '48%', md: '40%' },
-              cursor: 'pointer',
-              transition: 'all 0.4s cubic-bezier(0.23, 1, 0.320, 1)',
-              border: 'none',
-              boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)',
-              position: 'relative',
-              overflow: 'hidden',
-              backgroundColor: 'white',
-              '&:hover': {
-                transform: 'translateY(-12px)',
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+              width: { xs: "100%", sm: "48%", md: "40%" },
+              cursor: "pointer",
+              transition: `all ${ANIMATION.SLOW} cubic-bezier(0.23, 1, 0.320, 1)`,
+              border: "none",
+              boxShadow: "0 10px 40px rgba(0, 0, 0, 0.2)",
+              position: "relative",
+              overflow: "hidden",
+              backgroundColor: "white",
+              "&:hover": {
+                transform: "translateY(-12px)",
+                boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
               },
             }}
           >
-            <CardContent sx={{ textAlign: 'center', pt: 5, pb: 5 }}>
-              <Box sx={{ mb: 3, display: 'flex', justifyContent: 'center' }}>
+            <CardContent sx={{ textAlign: "center", pt: 5, pb: 5 }}>
+              <Box sx={{ mb: 3, display: "flex", justifyContent: "center" }}>
                 <Box
                   sx={{
                     width: 80,
                     height: 80,
-                    borderRadius: '20px',
-                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'all 0.4s',
-                    '&:hover': { transform: 'scale(1.15)' },
+                    borderRadius: "20px",
+                    background: COLORS.PRIMARY_GRADIENT,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: `all ${ANIMATION.NORMAL}`,
+                    "&:hover": { transform: "scale(1.15)" },
                   }}
                 >
-                  <PersonAddIcon sx={{ fontSize: 50, color: 'white' }} />
+                  <PersonAddIcon sx={{ fontSize: 50, color: "white" }} />
                 </Box>
               </Box>
 
-              <Typography variant="h5" sx={{ fontWeight: 800, mb: 1, color: '#333' }}>
+              <Typography
+                variant="h5"
+                sx={{ fontWeight: 800, mb: 1, color: "#333" }}
+              >
                 Nueva Inscripción
               </Typography>
 
-              <Typography color="textSecondary" sx={{ mb: 3, fontSize: '0.95rem', lineHeight: 1.6 }}>
+              <Typography
+                color="textSecondary"
+                sx={{ mb: 3, fontSize: "0.95rem", lineHeight: 1.6 }}
+              >
                 Registra nuevos participantes en el torneo
               </Typography>
 
@@ -72,15 +117,15 @@ export const HomePage: React.FC = () => {
                 variant="contained"
                 onClick={(e) => {
                   e.stopPropagation();
-                  navigate('/register');
+                  navigate("/register");
                 }}
                 sx={{
-                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  background: COLORS.PRIMARY_GRADIENT,
                   fontWeight: 700,
-                  padding: '10px 24px',
-                  borderRadius: '10px',
-                  textTransform: 'none',
-                  fontSize: '0.95rem',
+                  padding: "10px 24px",
+                  borderRadius: SPACING.BUTTON_BORDER_RADIUS,
+                  textTransform: "none",
+                  fontSize: "0.95rem",
                 }}
               >
                 Inscribir Alumno
@@ -90,46 +135,52 @@ export const HomePage: React.FC = () => {
 
           {/* Card Lista de Inscritos */}
           <Card
-            onClick={() => navigate('/participants')}
+            onClick={() => navigate("/participants")}
             sx={{
-              width: { xs: '100%', sm: '48%', md: '40%' },
-              cursor: 'pointer',
-              transition: 'all 0.4s cubic-bezier(0.23, 1, 0.320, 1)',
-              border: 'none',
-              boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)',
-              position: 'relative',
-              overflow: 'hidden',
-              backgroundColor: 'white',
-              '&:hover': {
-                transform: 'translateY(-12px)',
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+              width: { xs: "100%", sm: "48%", md: "40%" },
+              cursor: "pointer",
+              transition: `all ${ANIMATION.SLOW} cubic-bezier(0.23, 1, 0.320, 1)`,
+              border: "none",
+              boxShadow: "0 10px 40px rgba(0, 0, 0, 0.2)",
+              position: "relative",
+              overflow: "hidden",
+              backgroundColor: "white",
+              "&:hover": {
+                transform: "translateY(-12px)",
+                boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
               },
             }}
           >
-            <CardContent sx={{ textAlign: 'center', pt: 5, pb: 5 }}>
-              <Box sx={{ mb: 3, display: 'flex', justifyContent: 'center' }}>
+            <CardContent sx={{ textAlign: "center", pt: 5, pb: 5 }}>
+              <Box sx={{ mb: 3, display: "flex", justifyContent: "center" }}>
                 <Box
                   sx={{
                     width: 80,
                     height: 80,
-                    borderRadius: '20px',
-                    background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'all 0.4s',
-                    '&:hover': { transform: 'scale(1.15)' },
+                    borderRadius: "20px",
+                    background: COLORS.SECONDARY_GRADIENT,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: `all ${ANIMATION.NORMAL}`,
+                    "&:hover": { transform: "scale(1.15)" },
                   }}
                 >
-                  <GroupIcon sx={{ fontSize: 50, color: 'white' }} />
+                  <GroupIcon sx={{ fontSize: 50, color: "white" }} />
                 </Box>
               </Box>
 
-              <Typography variant="h5" sx={{ fontWeight: 800, mb: 1, color: '#333' }}>
+              <Typography
+                variant="h5"
+                sx={{ fontWeight: 800, mb: 1, color: "#333" }}
+              >
                 Lista de Inscritos
               </Typography>
 
-              <Typography color="textSecondary" sx={{ mb: 3, fontSize: '0.95rem', lineHeight: 1.6 }}>
+              <Typography
+                color="textSecondary"
+                sx={{ mb: 3, fontSize: "0.95rem", lineHeight: 1.6 }}
+              >
                 Ver y administrar todos los participantes
               </Typography>
 
@@ -137,15 +188,15 @@ export const HomePage: React.FC = () => {
                 variant="contained"
                 onClick={(e) => {
                   e.stopPropagation();
-                  navigate('/participants');
+                  navigate("/participants");
                 }}
                 sx={{
-                  background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                  background: COLORS.SECONDARY_GRADIENT,
                   fontWeight: 700,
-                  padding: '10px 24px',
-                  borderRadius: '10px',
-                  textTransform: 'none',
-                  fontSize: '0.95rem',
+                  padding: "10px 24px",
+                  borderRadius: SPACING.BUTTON_BORDER_RADIUS,
+                  textTransform: "none",
+                  fontSize: "0.95rem",
                 }}
               >
                 Ver Lista
@@ -154,8 +205,11 @@ export const HomePage: React.FC = () => {
           </Card>
         </Box>
 
-        <Box sx={{ textAlign: 'center', mt: 8 }}>
-          <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.9rem' }}>
+        <Box sx={{ textAlign: "center", mt: 8 }}>
+          <Typography
+            variant="body2"
+            sx={{ color: "rgba(255, 255, 255, 0.8)", fontSize: "0.9rem" }}
+          >
             © 2024 Torneo de Taekwondo. Todos los derechos reservados.
           </Typography>
         </Box>

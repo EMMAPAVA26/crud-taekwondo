@@ -16,6 +16,7 @@ import {
 } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import type { Participant, CreateParticipantDTO, DocumentType, Gender, Belt } from '../types/taekwondo';
+import { COLORS, SPACING } from '../constants';
 
 interface ParticipantFormProps {
   initialData?: Participant;
@@ -75,7 +76,7 @@ export const ParticipantForm: React.FC<ParticipantFormProps> = ({
   };
 
   return (
-    <Card sx={{ boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)', borderRadius: '16px' }}>
+    <Card sx={{ boxShadow: SPACING.CARD_SHADOW, borderRadius: SPACING.CARD_BORDER_RADIUS }}>
       <CardContent sx={{ p: 4 }}>
         <Typography variant="h5" sx={{ mb: 3, fontWeight: 700, color: '#333' }}>
           {initialData ? 'Editar Participante' : 'Nueva Inscripción'}
@@ -213,7 +214,7 @@ export const ParticipantForm: React.FC<ParticipantFormProps> = ({
               color="primary"
               startIcon={<SaveIcon />}
               disabled={isLoading}
-              sx={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', fontWeight: 700, borderRadius: '10px' }}
+              sx={{ background: COLORS.PRIMARY_GRADIENT, fontWeight: 700, borderRadius: SPACING.BUTTON_BORDER_RADIUS }}
             >
               {isLoading ? <CircularProgress size={24} /> : initialData ? 'Actualizar' : 'Inscribir Alumno'}
             </Button>

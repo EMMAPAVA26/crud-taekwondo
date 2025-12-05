@@ -8,6 +8,7 @@ import {
   Box,
 } from '@mui/material';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import { COLORS, ANIMATION } from '../constants'
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export const Header: React.FC = () => {
     <AppBar
       position="sticky"
       sx={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: COLORS.PRIMARY_GRADIENT,
         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
       }}
     >
@@ -34,7 +35,7 @@ export const Header: React.FC = () => {
               alignItems: 'center',
               gap: 1,
               cursor: 'pointer',
-              transition: 'transform 0.2s',
+              transition: `transform ${ANIMATION.FAST}`,
               '&:hover': {
                 transform: 'scale(1.05)',
               },
@@ -61,7 +62,7 @@ export const Header: React.FC = () => {
               sx={{
                 fontWeight: 600,
                 fontSize: '0.95rem',
-                transition: 'all 0.3s',
+                transition: `all ${ANIMATION.NORMAL}`,
                 padding: '8px 16px',
                 borderRadius: '8px',
                 '&:hover': {
@@ -78,7 +79,7 @@ export const Header: React.FC = () => {
               sx={{
                 fontWeight: 600,
                 fontSize: '0.95rem',
-                transition: 'all 0.3s',
+                transition: `all ${ANIMATION.NORMAL}`,
                 padding: '8px 16px',
                 borderRadius: '8px',
                 '&:hover': {
@@ -87,7 +88,7 @@ export const Header: React.FC = () => {
                 },
               }}
             >
-              Lista
+              Participantes
             </Button>
           </Box>
         </Toolbar>
